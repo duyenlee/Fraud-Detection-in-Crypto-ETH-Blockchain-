@@ -76,6 +76,7 @@ The **Pseudo R-squared** of 0.4716 indicates that the model explains ~47% of the
 
 ## 🧾 Feature Description
 
+
 |Variable                                  |Description                                                                 |
 |:----------------------------------------|:---------------------------------------------------------------------------|
 |Address                                  |The address of the Ethereum account                                         |
