@@ -41,7 +41,7 @@ The dataset contains 9,841 Ethereum wallet addresses with 49 behavioral features
   - **Phishing wallets** interacted with a **larger number of unique addresses**, often one-time interactions with potential victims.  
   - **Normal wallets** showed **more frequent interactions** with a smaller, stable set of addresses.
 
-- **Transaction Volume (Bar Chart Insight)**  
+- **Transaction Volume**  
   - **Phishing wallets** had **fewer sent and received transactions**, suggesting short-lived or one-off activity.  
   - **Normal wallets** had **higher activity levels**, reflecting consistent and ongoing use of the network.
  
