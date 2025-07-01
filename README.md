@@ -1,4 +1,4 @@
-# Ethereum Fraud Detection Dataset
+# Ethereum Fraud Detection 
 
 ## 📖 Overview
 This project analyzes Ethereum wallet behavior to classify addresses as either phishing (fraudulent) or normal.  
