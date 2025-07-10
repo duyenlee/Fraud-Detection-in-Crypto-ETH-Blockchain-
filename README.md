@@ -99,6 +99,15 @@ This table summarizes the XGBoost gain-based feature importance, which reflects 
 
 The **Pseudo R-squared** of 0.4716 indicates that the model explains ~47% of the variation in the target variable. This is considered a strong fit for classification problems involving behavioral or fraud detection data.
 
+### ⚠️ Model Limitations
+
+- **Synthetic Sampling (SMOTE)**: SMOTE was used to address class imbalance by generating synthetic minority class examples. This may introduce patterns that differ from real-world behavior and can affect generalizability.
+
+- **Temporal Validation Omitted**: The dataset was split randomly into training and testing sets. In real-world scenarios, time-based validation would better simulate future fraud detection.
+
+- **Linearity in Log-Odds**: Logistic regression assumes a linear relationship between input features and the log-odds of the outcome. If some relationships are non-linear and not transformed, the model may underfit important patterns.
+
+
 ## 🧾 Feature Description
 
 
