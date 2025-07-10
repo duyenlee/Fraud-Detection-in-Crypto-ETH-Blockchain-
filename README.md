@@ -57,6 +57,31 @@ I trained and evaluated multiple models for fraud detection:
 - Precision (fraud): ~90%
 - Recall (fraud): ~86%
 
+### 🔍 SHAP Feature Importance (Top 5)
+SHAP values measure how much each feature impacts model predictions, on average.
+
+| Rank | Feature                                   | Mean \|SHAP Value\| | Normalized (%) | Interpretation                                                                           |
+| ---- | ----------------------------------------- | ------------------- | -------------- | ---------------------------------------------------------------------------------------- |
+| 1    | `Time Diff between first and last (Mins)` | 3.65                | **26.63%**     | Primary driver of prediction — captures how quickly or slowly an account becomes active. |
+| 2    | `total Ether sent`                        | 1.96                | 14.30%         | Indicates transaction volume — higher values suggest aggressive behavior.                |
+| 3    | `Sent tnx`                                | 1.48                | 10.82%         | Frequent outgoing transactions can signal automated or suspicious behavior.              |
+| 4    | `ERC20 total ether sent`                  | 1.04                | 7.56%          | ERC20 token activity is an additional indicator of transactional intent.                 |
+| 5    | `Received Tnx`                            | 0.87                | 6.35%          | Shows how many incoming transactions occurred — useful for behavioral profiling.         |
+
+**Summary:** The top 5 features contribute nearly 66% of the model's predictive reasoning. These behaviors are the strongest indicators in identifying phishing or fraud-related activity on the Ethereum network.
+
+### 📊 XGBoost Feature Importance (Top 5 by Gain)
+This table summarizes the XGBoost gain-based feature importance, which reflects each feature’s average contribution to reducing the training error when used in a decision tree split.
+
+| Rank | Feature                                   | Gain Score | Normalized (%) | Description                                               |
+| ---- | ----------------------------------------- | ---------- | -------------- | --------------------------------------------------------- |
+| 1    | `received_higher_sent`                    | 402.19     | **77.09%**     | Most impactful feature in improving the model’s accuracy. |
+| 2    | `ERC20 min val rec`                       | 19.11      | 3.66%          | Provides a moderate contribution to error reduction.      |
+| 3    | `Time Diff between first and last (Mins)` | 19.01      | 3.64%          | Contributes similarly to the second-ranked feature.       |
+| 4    | `Number of Created Contracts`             | 11.96      | 2.29%          | Adds minor but meaningful value during model training.    |
+| 5    | `total Ether sent`                        | 10.10      | 1.94%          | Has a smaller, yet relevant, impact on model learning.    |
+
+
 ### 🔝 Top 10 Significant Features Impacting Suspicious Flag (from Logistic Regression)
 
 | Feature                                   | Coefficient    | Direction | Interpretation                                                                                                                     |
